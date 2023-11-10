@@ -4,9 +4,9 @@ import { PaymentDataContainer } from './styles'
 export function PaymentData() {
   return (
     <PaymentDataContainer>
-      <div>
-        <div className="Titulo">
-          <CurrencyDollar />
+      <div className="paymentData">
+        <div className="titulos">
+          <CurrencyDollar size="22" className="icone" />
           <div>
             <h3>Pagamento</h3>
             <p>
