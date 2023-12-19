@@ -4,6 +4,11 @@ export const CheckoutContainer = styled.div`
   .wrapper {
     display: flex;
     gap: 2rem;
+    padding-bottom: 15rem;
+  }
+
+  .pedidoContainer {
+    width: 100%;
   }
 
   h2 {
@@ -27,5 +32,12 @@ export const CheckoutContainer = styled.div`
     background-color: ${(props) => props.theme.baseCard};
     border-radius: 6px;
     padding: 2.5rem;
+  }
+
+  .coffeData {
+    background-color: ${(props) => props.theme.baseCard};
+    padding: 2.5rem;
+    border-radius: 6px 44px;
+    width: 28rem;
   }
 `

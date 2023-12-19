@@ -7,7 +7,7 @@ export function Checkout() {
   return (
     <CheckoutContainer>
       <div className="wrapper">
-        <div>
+        <div className="pedidoContainer">
           <h2>Complete seu pedido</h2>
           <div className="orderData">
             <div className="personalDataComponent">
@@ -20,7 +20,7 @@ export function Checkout() {
         </div>
         <div>
           <h2>Cafés selecionados</h2>
-          <div>
+          <div className="coffeData">
             <CartDetails />
           </div>
         </div>

@@ -10,22 +10,22 @@ export function CartDetails() {
           <ItemCartDetails />
           <ItemCartDetails />
         </div>
-        <div>
-          <div>
+        <div className="linhasCartDetails">
+          <div className="linhaCartDetails">
             <p>Total de itens</p>
             <p>R$ 29,70</p>
           </div>
-          <div>
+          <div className="linhaCartDetails">
             <p>Entrega</p>
             <p>R$ 3,50</p>
           </div>
-          <div>
+          <div className="linhaCartDetails">
             <p>Total</p>
             <p>R$ 32,20</p>
           </div>
         </div>
-        <NavLink to="/orderplaced">
-          <button>Confirmar Pedido</button>
+        <NavLink className="nav" to="/orderplaced">
+          <button className="confirmarPedido">Confirmar Pedido</button>
         </NavLink>
       </div>
     </CartDetailsContainer>

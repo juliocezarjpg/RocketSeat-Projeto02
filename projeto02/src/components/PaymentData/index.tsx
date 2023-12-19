@@ -14,17 +14,23 @@ export function PaymentData() {
             </p>
           </div>
         </div>
-        <div>
+        <div className="paymentOptions">
           <button>
-            <CreditCard />
+            <span>
+              <CreditCard size="16" />
+            </span>
             <p>Cartão de Crédito</p>
           </button>
           <button>
-            <Bank />
+            <span>
+              <Bank size="16" />
+            </span>
             <p>Cartão de Débito</p>
           </button>
           <button>
-            <Money />
+            <span>
+              <Money size="16" />
+            </span>
             <p>Dinheiro</p>
           </button>
         </div>
