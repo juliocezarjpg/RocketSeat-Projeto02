@@ -1,21 +1,28 @@
 import { CafeContainer } from './styles'
 
-import expressoTradicional from '../../assets/cafes/expresso-tradicional.png'
 import { Minus, Plus, ShoppingCart } from 'phosphor-react'
 
-export function Cafe() {
+interface CafeProps {
+  imagem: string
+  tipo: string
+  nome: string
+  descrição: string
+  preço: string
+}
+
+export function Cafe(props: CafeProps) {
   return (
     <CafeContainer>
       <div className="productDetails">
-        <img src={expressoTradicional} alt="Café expresso tradicional"></img>
+        <img src={props.imagem} alt={props.nome}></img>
         <section className="tags">
-          <p>Tradicional</p>
+          <p>{props.tipo}</p>
         </section>
-        <h2>Expresso Tradicional</h2>
-        <h3>O tradicional café feito com água quente e grãos moídos</h3>
+        <h2>{props.nome}</h2>
+        <h3>{props.descrição}</h3>
         <section className="productToCart">
           <p className="price">
-            R$ <span>9,90</span>
+            R$ <span>{props.preço}</span>
           </p>
           <section className="actions">
             <section className="productQuantity">

@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import { Home } from './pages/Home'
 import { Checkout } from './pages/Checkout'
-import { OrderPlaced } from './pages/OrderPlaced/OrderPlaced'
+import { OrderPlaced } from './pages/OrderPlaced'
 import { DefaultLayout } from './layouts/DefaultLayout'
 
 export function Router() {
