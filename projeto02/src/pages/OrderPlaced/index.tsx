@@ -7,8 +7,12 @@ import {
   OrderPlacedContainer,
   OrderPlacedDetails,
 } from './styles'
+import { useContext } from 'react'
+import { OrdersContext } from '../../context/OrdersContext'
 
 export function OrderPlaced() {
+  const { orderForm } = useContext(OrdersContext)
+
   return (
     <OrderPlacedContainer>
       <h1>Uhu! Pedido Confirmado</h1>
@@ -16,18 +20,23 @@ export function OrderPlaced() {
       <OrderPlacedDetails>
         <OrderDetails>
           <DetailsOrderPlaced>
-            <LogoDdetailsOrderPlaced infosColor="purpleDark">
+            <LogoDdetailsOrderPlaced infoscolor="purpleDark">
               <MapPin weight="fill" size="16" />
             </LogoDdetailsOrderPlaced>
             <div>
               <p>
-                Entrega em <span>Rua Quartoze de Julho, 1319</span>
+                Entrega em{' '}
+                <span>
+                  {orderForm?.rua}, {orderForm?.numero}
+                </span>
               </p>
-              <p>João Pessoa - PB</p>
+              <p>
+                {orderForm?.cidade} - {orderForm?.uf}
+              </p>
             </div>
           </DetailsOrderPlaced>
           <DetailsOrderPlaced>
-            <LogoDdetailsOrderPlaced infosColor="yellow">
+            <LogoDdetailsOrderPlaced infoscolor="yellow">
               <Timer weight="fill" size="16" />
             </LogoDdetailsOrderPlaced>
             <div>
@@ -38,13 +47,13 @@ export function OrderPlaced() {
             </div>
           </DetailsOrderPlaced>
           <DetailsOrderPlaced>
-            <LogoDdetailsOrderPlaced infosColor="yellowDark">
+            <LogoDdetailsOrderPlaced infoscolor="yellowDark">
               <CurrencyDollar weight="fill" size="16" />
             </LogoDdetailsOrderPlaced>
             <div>
               <p>Pagamento na Entrega</p>
               <p>
-                <span>Cartão de Crédito</span>
+                <span>{orderForm?.paymentData}</span>
               </p>
             </div>
           </DetailsOrderPlaced>

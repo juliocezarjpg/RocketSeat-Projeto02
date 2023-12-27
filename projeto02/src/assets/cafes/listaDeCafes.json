@@ -1,13 +1,15 @@
 {
     "cafes":[
         {
-        "imagem": "/src/assets/cafes/Type=Americano.png",
-        "tipo": "Tradicional",
-        "nome": "Expresso Tradicional",
-        "descrição": "O tradicional café feito com água quente e grãos moídos",
-        "preço": "9,90"
+            "id": 1,
+            "imagem": "/src/assets/cafes/Type=Americano.png",
+            "tipo": "Tradicional",
+            "nome": "Expresso Tradicional",
+            "descrição": "O tradicional café feito com água quente e grãos moídos",
+            "preço": "9,90"
         },
         {
+            "id": 2,
             "imagem": "/src/assets/cafes/Type=Expresso.png",
             "tipo": "Tradicional",
             "nome": "Expresso Americano",
@@ -15,6 +17,7 @@
             "preço": "9,90"
         },
         {
+            "id": 3,
             "imagem": "/src/assets/cafes/Type=Expresso Cremoso.png",
             "tipo": "Tradicional",
             "nome": "Expresso Cremoso",
@@ -22,6 +25,7 @@
             "preço": "9,90"
         },
         {
+            "id": 4,
             "imagem": "/src/assets/cafes/Type=Café Gelado.png",
             "tipo": "Tradicional",
             "nome": "Expresso Gelado",
@@ -29,6 +33,7 @@
             "preço": "9,90"
         },
         {
+            "id": 5,
             "imagem": "/src/assets/cafes/Type=Café Com Leite.png",
             "tipo": "Com Leite",
             "nome": "Café com Leite",
@@ -36,6 +41,7 @@
             "preço": "9,90"
         },
         {
+            "id": 6,
             "imagem": "/src/assets/cafes/Type=Latte.png",
             "tipo": "Com Leite",
             "nome": "Latte",
@@ -43,6 +49,7 @@
             "preço": "9,90"
         },
         {
+            "id": 7,
             "imagem": "/src/assets/cafes/Type=Capuccino.png",
             "tipo": "Com Leite",
             "nome": "Capuccino",
@@ -50,6 +57,7 @@
             "preço": "9,90"
         },
         {
+            "id": 8,
             "imagem": "/src/assets/cafes/Type=Macchiato.png",
             "tipo": "Tradicional",
             "nome": "Macchiato",
@@ -57,13 +65,15 @@
             "preço": "9,90"
         },
         {
-            "imagem": "/src/assets/cafes/Type=Mocaccino.png",
+            "id": 9,
+            "imagem": "/src/assets/cafes/Type=Mochaccino.png",
             "tipo": "Com Leite",
             "nome": "Mocaccino",
             "descrição": "Café expresso com calda de chocolate, pouco leite e espuma",
             "preço": "9,90"
         },
         {
+            "id": 10,
             "imagem": "/src/assets/cafes/Type=Chocolate Quente.png",
             "tipo": "Especial",
             "nome": "Chocolate Quente",
@@ -71,6 +81,7 @@
             "preço": "9,90"
         },
         {
+            "id": 11,
             "imagem": "/src/assets/cafes/Type=Cubano.png",
             "tipo": "Alcólico",
             "nome": "Cubano",
@@ -78,6 +89,7 @@
             "preço": "9,90"
         },
         {
+            "id": 12,
             "imagem": "/src/assets/cafes/Type=Havaiano.png",
             "tipo": "Especial",
             "nome": "Havaiano",
@@ -85,6 +97,7 @@
             "preço": "9,90"
         },
         {
+            "id": 13,
             "imagem": "/src/assets/cafes/Type=Árabe.png",
             "tipo": "Especial",
             "nome": "Árabe",
@@ -92,6 +105,7 @@
             "preço": "9,90"
         },
         {
+            "id": 14,
             "imagem": "/src/assets/cafes/Type=Irlandês.png",
             "tipo": "Alcólico",
             "nome": "Irlandês",

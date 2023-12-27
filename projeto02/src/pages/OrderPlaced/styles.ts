@@ -59,11 +59,11 @@ const INFOS_COLORS = {
 } as const
 
 interface InfosProps {
-  infosColor: keyof typeof INFOS_COLORS
+  infoscolor: keyof typeof INFOS_COLORS
 }
 
 export const LogoDdetailsOrderPlaced = styled.div<InfosProps>`
-  background-color: ${(props) => props.theme[INFOS_COLORS[props.infosColor]]};
+  background-color: ${(props) => props.theme[INFOS_COLORS[props.infoscolor]]};
   color: ${(props) => props.theme.white};
   padding: 8px;
   justify-content: center;

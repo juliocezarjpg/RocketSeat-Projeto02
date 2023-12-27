@@ -1,9 +1,20 @@
 import { ItemCartDetailsContainer } from './styles'
 
-import expressoTradicional from '../../assets/cafes/expresso-tradicional.png'
+import expressoTradicional from '../../assets/cafes/Type=Americano.png'
 import { Minus, Plus, Trash } from 'phosphor-react'
+import { useState } from 'react'
 
 export function ItemCartDetails() {
+  const [quantity, setQuantity] = useState(1)
+
+  const handleIncrement = () => {
+    setQuantity((prevQuantity) => prevQuantity + 1)
+  }
+
+  const handleDecrement = () => {
+    setQuantity((prevQuantity) => Math.max(prevQuantity - 1, 1))
+  }
+
   return (
     <ItemCartDetailsContainer>
       <div className="boxItem">
@@ -21,11 +32,11 @@ export function ItemCartDetails() {
             <div className="quantityControl">
               <div className="productQuantity">
                 <button className="signals">
-                  <Minus size="14" />
+                  <Minus size="14" onClick={handleDecrement} />
                 </button>
-                <p className="quantity">1</p>
+                <p className="quantity">{quantity}</p>
                 <button className="signals">
-                  <Plus size="14" />
+                  <Plus size="14" onClick={handleIncrement} />
                 </button>
               </div>
               <div className="itemRemove">

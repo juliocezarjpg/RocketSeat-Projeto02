@@ -1,8 +1,10 @@
+import { useState } from 'react'
 import { CafeContainer } from './styles'
 
 import { Minus, Plus, ShoppingCart } from 'phosphor-react'
 
 interface CafeProps {
+  id: number
   imagem: string
   tipo: string
   nome: string
@@ -11,6 +13,16 @@ interface CafeProps {
 }
 
 export function Cafe(props: CafeProps) {
+  const [quantity, setQuantity] = useState(1)
+
+  const handleIncrement = () => {
+    setQuantity((prevQuantity) => prevQuantity + 1)
+  }
+
+  const handleDecrement = () => {
+    setQuantity((prevQuantity) => Math.max(prevQuantity - 1, 1))
+  }
+
   return (
     <CafeContainer>
       <div className="productDetails">
@@ -27,11 +39,11 @@ export function Cafe(props: CafeProps) {
           <section className="actions">
             <section className="productQuantity">
               <button className="signals">
-                <Minus size="14" />
+                <Minus size="14" onClick={handleDecrement} />
               </button>
-              <p className="quantity">1</p>
+              <p className="quantity">{quantity}</p>
               <button className="signals">
-                <Plus size="14" />
+                <Plus size="14" onClick={handleIncrement} />
               </button>
             </section>
             <section>

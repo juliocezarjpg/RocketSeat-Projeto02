@@ -1,7 +1,19 @@
+import { useContext } from 'react'
 import { PersonalDataContainer } from './styles'
 import { MapPinLine } from 'phosphor-react'
+import { OrdersContext } from '../../context/OrdersContext'
 
 export function PersonalData() {
+  const { setOrderForm } = useContext(OrdersContext)
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target
+    setOrderForm((prevOrderForm) => ({
+      ...prevOrderForm,
+      [name]: value,
+    }))
+  }
+
   return (
     <PersonalDataContainer>
       <div className="personalData">
@@ -15,19 +27,31 @@ export function PersonalData() {
         <div className="formulario">
           <form>
             <div>
-              <input placeholder="CEP" required name="cep" />
+              <input placeholder="CEP" name="cep" />
             </div>
             <div>
-              <input placeholder="Rua" required name="rua" />
+              <input
+                placeholder="Rua"
+                name="rua"
+                onChange={handleInputChange}
+              />
             </div>
             <div>
-              <input placeholder="Número" required name="numero" />
+              <input
+                placeholder="Número"
+                name="numero"
+                onChange={handleInputChange}
+              />
               <input placeholder="Complemento" name="complemento"></input>
             </div>
             <div>
-              <input placeholder="Bairro" required name="bairro" />
-              <input placeholder="Cidade" required name="cidade" />
-              <input placeholder="UF" required name="uf" />
+              <input placeholder="Bairro" name="bairro" />
+              <input
+                placeholder="Cidade"
+                name="cidade"
+                onChange={handleInputChange}
+              />
+              <input placeholder="UF" name="uf" onChange={handleInputChange} />
             </div>
           </form>
         </div>

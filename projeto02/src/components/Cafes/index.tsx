@@ -9,11 +9,9 @@ export function Cafes() {
     <CafesContainer>
       <h1>Nossos Cafés</h1>
       <div className="cafes">
-        <Cafe {...cafesData.cafes[0]} />
-        <Cafe {...cafesData.cafes[1]} />
-        <Cafe {...cafesData.cafes[2]} />
-        <Cafe {...cafesData.cafes[3]} />
-        <Cafe {...cafesData.cafes[4]} />
+        {cafesData.cafes.map((cafe) => (
+          <Cafe key={cafe.id} {...cafe} />
+        ))}
       </div>
     </CafesContainer>
   )

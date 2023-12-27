@@ -1,7 +1,15 @@
 import { Bank, CreditCard, CurrencyDollar, Money } from 'phosphor-react'
 import { PaymentDataContainer } from './styles'
+import { useContext } from 'react'
+import { OrdersContext } from '../../context/OrdersContext'
 
 export function PaymentData() {
+  const { setPaymentData } = useContext(OrdersContext)
+
+  function handlePaymentClick(paymentType: string) {
+    setPaymentData(paymentType)
+  }
+
   return (
     <PaymentDataContainer>
       <div className="paymentData">
@@ -15,19 +23,19 @@ export function PaymentData() {
           </div>
         </div>
         <div className="paymentOptions">
-          <button>
+          <button onClick={() => handlePaymentClick('Cartão de Crédito')}>
             <span>
               <CreditCard size="16" />
             </span>
             <p>Cartão de Crédito</p>
           </button>
-          <button>
+          <button onClick={() => handlePaymentClick('Cartão de Débito')}>
             <span>
               <Bank size="16" />
             </span>
             <p>Cartão de Débito</p>
           </button>
-          <button>
+          <button onClick={() => handlePaymentClick('Dinheiro')}>
             <span>
               <Money size="16" />
             </span>
