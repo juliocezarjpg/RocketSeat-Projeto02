@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
-export const HeaderContainer = styled.header`
+interface InfosProps {
+  quantidade: number
+}
+
+export const HeaderContainer = styled.header<InfosProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -30,5 +34,24 @@ export const HeaderContainer = styled.header`
     height: 2.375rem;
     padding: 0.5rem;
     border-radius: 8px;
+    position: relative;
+  }
+
+  span {
+    background-color: ${(props) => props.theme.yellowDark};
+    border-radius: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: ${(props) => props.theme.white};
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    position: absolute;
+    right: -8.345px;
+    top: -8px;
+    width: 20px;
+    height: 20px;
+    opacity: ${(props) => (props.quantidade === 0 ? 0 : 1)};
   }
 `

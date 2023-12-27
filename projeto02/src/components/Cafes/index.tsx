@@ -4,7 +4,6 @@ import { CafesContainer } from './styles'
 import cafesData from '../../assets/cafes/listaDeCafes.json'
 
 export function Cafes() {
-  console.log(cafesData.cafes[0])
   return (
     <CafesContainer>
       <h1>Nossos Cafés</h1>

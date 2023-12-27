@@ -40,6 +40,7 @@ export const CartDetailsContainer = styled.div`
     color: ${(props) => props.theme.white};
     font-weight: 700;
     text-transform: uppercase;
+    cursor: pointer;
   }
 
   .nav {

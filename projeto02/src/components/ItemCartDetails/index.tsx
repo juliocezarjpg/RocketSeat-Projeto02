@@ -1,19 +1,43 @@
 import { ItemCartDetailsContainer } from './styles'
-
-import expressoTradicional from '../../assets/cafes/Type=Americano.png'
 import { Minus, Plus, Trash } from 'phosphor-react'
-import { useState } from 'react'
+import { useContext } from 'react'
 
-export function ItemCartDetails() {
-  const [quantity, setQuantity] = useState(1)
+import cafesData from '../../assets/cafes/listaDeCafes.json'
+import { OrdersContext } from '../../context/OrdersContext'
+
+interface OrdemItem {
+  id: number
+  quantidade: number
+}
+export function ItemCartDetails({ item }: { item: OrdemItem }) {
+  const { updateQuantity, removeItem } = useContext(OrdersContext)
+
+  const cafeSelecionado = cafesData.cafes.find((cafe) => cafe.id === item.id)
 
   const handleIncrement = () => {
-    setQuantity((prevQuantity) => prevQuantity + 1)
+    const newQuantity = item.quantidade + 1
+    updateQuantity(item.id, newQuantity)
   }
 
   const handleDecrement = () => {
-    setQuantity((prevQuantity) => Math.max(prevQuantity - 1, 1))
+    const newQuantity = Math.max(item.quantidade - 1, 1)
+    updateQuantity(item.id, newQuantity)
   }
+
+  const handleRemove = () => {
+    removeItem(item.id)
+  }
+
+  const parsePrice = (priceString: string): number => {
+    const numericString = priceString.replace(',', '.')
+    return parseFloat(numericString)
+  }
+
+  const totalPrice = parsePrice(cafeSelecionado?.preço || '0') * item.quantidade
+  const totalPriceString = totalPrice.toLocaleString('pt-BR', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  })
 
   return (
     <ItemCartDetailsContainer>
@@ -21,34 +45,34 @@ export function ItemCartDetails() {
         <div className="detailsItem">
           <div>
             <img
-              src={expressoTradicional}
-              alt="Café expresso tradicional"
+              src={cafeSelecionado?.imagem}
+              alt={cafeSelecionado?.nome}
             ></img>
           </div>
           <div>
             <div>
-              <p className="TituloItemCartDetails">Expresso Tradicional</p>
+              <p className="TituloItemCartDetails">{cafeSelecionado?.nome}</p>
             </div>
             <div className="quantityControl">
               <div className="productQuantity">
                 <button className="signals">
                   <Minus size="14" onClick={handleDecrement} />
                 </button>
-                <p className="quantity">{quantity}</p>
+                <p className="quantity">{item.quantidade}</p>
                 <button className="signals">
                   <Plus size="14" onClick={handleIncrement} />
                 </button>
               </div>
               <div className="itemRemove">
-                <button className="remove">
+                <button className="remove" onClick={handleRemove}>
                   <Trash size="14" />
+                  <p>Remover</p>
                 </button>
-                <p>Remover</p>
               </div>
             </div>
           </div>
         </div>
-        <div className="priceItemCartDetails">R$ 9,90</div>
+        <div className="priceItemCartDetails">R$ {totalPriceString}</div>
       </div>
 
       <div className="stroke"></div>

@@ -59,24 +59,25 @@ export const ItemCartDetailsContainer = styled.div`
     display: flex;
     justify-content: center;
     border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+
+  .remove p {
+    color: ${(props) => props.theme.baseText};
+    font-size: 12px;
+    line-height: 160%; /* 19.2px */
+    text-transform: uppercase;
+    padding-left: 0.25rem;
   }
 
   .itemRemove {
     display: flex;
     align-items: center;
     background-color: ${(props) => props.theme.baseButton};
-    gap: 0.25rem;
     padding: 0.5rem;
     border-radius: 6px;
-    font-family: 'Roboto';
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 160%; /* 19.2px */
-    text-transform: uppercase;
-  }
-
-  .divider {
   }
 
   .stroke {

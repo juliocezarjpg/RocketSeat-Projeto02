@@ -116,5 +116,6 @@ export const CafeContainer = styled.div`
     border: none;
     color: ${(props) => props.theme.baseCard};
     margin-left: 0.5rem;
+    cursor: pointer;
   }
 `
